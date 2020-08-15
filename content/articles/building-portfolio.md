@@ -1,9 +1,10 @@
 ---
-layout: post
-title: 'Building portfolio'
-description: 'We will be walking through how to develop your own portfolio website using the Jekyll framework.'
-github_name: 'portfolio_example'
-categories: blogs
+img: jekyll.png
+alt: picture of science beaker
+title: Building portfolio
+description: We will be walking through how to develop your own portfolio website using the Jekyll framework.
+github_name: portfolio_example
+categories: [blogs]
 ---
 ### Language
 
@@ -115,18 +116,18 @@ Ok now for our part, we are going to be using a very basic them called hacker. I
  You are welcome to use other themes than Hacker for your page. This tutorial will be using that theme but I'm sure you can still make another one work. Before you get too far with one however, you better make sure it is [supported by Github pages](https://pages.github.com/themes/) (assuming that is where you are hosting at). An easy way to explore other themes is to go to to [rubygems.org](https://rubygems.org) and [search for jekyll-themes](https://rubygems.org/search?utf8=%E2%9C%93&query=jekyll-theme).
 
 Okay now that all of that is out of the way lets get our theme updated. Let's open back up our *Gemfile*.
-<img src="@/assets/gemfile.png">
-![Pic of Gemfile](/images/gemfile.png)
+
+![Pic of Gemfile](/content-images/gemfile.png)
 
 Okay this will be pretty easy. All we have to do is copy the gem name/version from the [gem page](https://rubygems.org/gems/jekyll-theme-hacker).
 
-![Pic hacker theme gem copy button](/images/hacker_theme_copy.png)
+![Pic hacker theme gem copy button](/content-images/hacker_theme_copy.png)
 
 Now let's replace minima in our *Gemfile* with that copy.
 
 And then lets open up the *_config.yml* file in our directory. There should also be a section in here that defines the theme. Let's update that as well.
 
-![Pic of config theme](/images/config_theme.png)
+![Pic of config theme](/content-images/config_theme.png)
 
 It would be great to see what everything looks like, but you might find things to be temporarily broken. The issue goes back to layouts. The Minima theme defined a layout for *home*, *page*, and *post*. That matters because those layouts are referred to in a few places. You can see it at the top of the *index.markdown* file for example. Our new theme does not have those layouts..... So we will have to build some ourselves.
 
@@ -220,7 +221,7 @@ bundle exec jekyll serve
 
 And lets see how it looks!
 
-![Pic of current home page](/images/initial_home.png)
+![Pic of current home page](/content-images/initial_home.png)
 
 Nothing too special yet, but it is a start. Also notice how the title we defined in the `home.md` Front Matter is being displayed as an h2 due to how we setup the *layout*. Pretty cool so far!
 

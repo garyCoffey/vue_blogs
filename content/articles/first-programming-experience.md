@@ -1,7 +1,7 @@
 ---
-layout: post
-title: "My First Programming Experience"
-categories: blogs
+title: My First Programming Experience
+description: How I stumbled into my first programming experience.
+categories: [blogs]
 ---
 My first introduction to code was during my time in the Air Force.
 

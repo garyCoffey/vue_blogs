@@ -2,7 +2,7 @@
   <article>
     <div>
       <img
-        :src="article.img"
+        :src="article.image"
         :alt="article.alt"
       />
 
@@ -13,11 +13,6 @@
         >
           All articles
         </NuxtLink>
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-        >
-          Tutorial
-        </a>
       </div>
     <div>
       <p>Post last updated: {{ formatDate(article.updatedAt) }}</p>
