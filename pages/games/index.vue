@@ -41,7 +41,7 @@
           <v-divider></v-divider>
 
           <v-card-text>
-            A turn based game where you will fight to defeat the monster, before you yourself are defeated.
+            A turn based game where you will fight to defeat the monster, before you yourself are defeated. SOmething to mention is that I followed a Vue tutorial for the main parts of this game. It has deviated slightly from that tutorial but not by much.
           </v-card-text>
         </div>
       </v-expand-transition>
