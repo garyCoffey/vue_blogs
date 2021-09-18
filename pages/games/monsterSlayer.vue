@@ -19,17 +19,19 @@
     >
       <section class="row">
         <div class="small-6 columns">
-          <h2 class="text-center">YOU</h2>
+          <h2 class="text-center">You</h2>
           <div class="healthbar">
-            <div class="healthbar health text-center">
+            <div class="healthbar health text-center" :style="{width: `${playerHealth}px` }">
               {{playerHealth}}
             </div>
           </div>
         </div>
+      </section>
+      <section class="row">
         <div class="small-6 columns">
-          <h2 class="text-center">MONSTER</h2>
+          <h2 class="text-center">Monster</h2>
           <div class="healthbar">
-            <div class="healthbar health text-center">
+            <div class="healthbar health text-center" :style="{width: `${monsterHealth}px` }">
               {{ monsterHealth }}
             </div>
           </div>
@@ -37,15 +39,15 @@
       </section>
       <section class="row controls">
         <div class="small-12 columns" v-if="turn || checkGameOver" @click='turn = !turn; coolOff -= 1'>
-          <button id="attack" @click="attack">ATTACK</button>
-          <button id="special-attack" @click="specialAttack()" v-if="checkCoolOff">SPECIAL ATTACK</button>
-          <button id="heal" @click="heal()">HEAL</button>
-          <button id="give-up" @click="giveUp()">GIVE UP</button>
+          <v-btn id="attack" @click="attack">ATTACK</v-btn>
+          <v-btn id="special-attack" @click="specialAttack()" v-if="checkCoolOff">SPECIAL ATTACK</v-btn>
+          <v-btn id="heal" @click="heal()">HEAL</v-btn>
+          <v-btn id="give-up" @click="giveUp()">GIVE UP</v-btn>
         </div>
       </section>
       <section class="row controls">
         <div class="small-12 columns">
-          <button id="start-game" @click="resetGame">START NEW GAME</button>
+          <v-btn id="start-game" @click="resetGame">START NEW GAME</v-btn>
         </div>
       </section>
       <section class="row log" v-for="log in logs">
@@ -110,17 +112,17 @@
         this.playerHealth = 0;
         setTimeout(() => {
           checkGame;
-        }, 600);
+        }, 300);
       },
       monsterTurn: function() {
         setTimeout(() => {
           let randomNumber = Math.floor(Math.random() * (constants.MONSTER_MAX - constants.MONSTER_MIN + 1) + constants.MONSTER_MIN)
           this.playerHealth -= randomNumber;
           this.createLog('MONSTER', 'HITS', randomNumber);
-        }, 600);
+        }, 300);
         setTimeout(() => {
           this.checkGame;
-        }, 600);
+        }, 300);
       },
       createLog: function(person, action, amount) {
         this.logs.unshift(`${person} ${action}, for ${amount}`);
@@ -215,7 +217,7 @@
     background-color: #ffc0c1;
   }
 
-  button {
+  v-btn {
     font-size: 20px;
     background-color: #eee;
     padding: 12px !important;
