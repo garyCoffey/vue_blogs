@@ -27,7 +27,6 @@
 </template>
 
 <script>
-  import ContentCard from '../../components/ContentCard'
   export default {
     async asyncData({ $content, params }) {
       const articles = await $content('articles', params.slug)
