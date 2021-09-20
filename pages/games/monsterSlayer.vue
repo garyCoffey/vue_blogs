@@ -111,7 +111,7 @@
       giveUp: function() {
         this.playerHealth = 0;
         setTimeout(() => {
-          checkGame;
+          return this.checkGame;
         }, 300);
       },
       monsterTurn: function() {
@@ -121,7 +121,7 @@
           this.createLog('MONSTER', 'HITS', randomNumber);
         }, 300);
         setTimeout(() => {
-          this.checkGame;
+          return this.checkGame;
         }, 300);
       },
       createLog: function(person, action, amount) {

@@ -1,29 +1,13 @@
 <template>
-  <div>
-    <h1>Blog Posts</h1>
+  <v-container fluid>
+    <h2>Blog Posts</h2>
     <v-card>
-      <p>
+      <v-card-text>
         The blog posts you will find here relate to all things code. In the future I might expand into other topics but we'll see.
-      </p>
+      </v-card-text>
     </v-card>
-    <v-container>
-        <v-row>
-          <v-col
-            v-for="article of articles"
-            :key="article.slug"
-            cols="6"
-          >
-            <ContentCard
-              v-bind:img="article.img"
-              v-bind:title="article.title"
-              v-bind:description="article.description"
-              v-bind:date="article.updatedAt > article.createdAt ? article.updatedAt : article.createdAt"
-              v-bind:to="{ name: 'blog-slug', params: { slug: article.slug } }"
-            />
-          </v-col>
-        </v-row>
-    </v-container>
-  </div>
+    <IndexContainer :items="articles" type='blog' />
+  </v-container>
 </template>
 
 <script>
