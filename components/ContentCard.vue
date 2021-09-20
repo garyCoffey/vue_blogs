@@ -8,7 +8,8 @@
     <v-img
     class="white--text align-end"
     height="200px"
-    :src="img ? `/thumbnails/${img}`: '/defaultPic.png'"
+    :src="img ? img : '/defaultPic.png'"
+    :alt="alt ? alt : 'VSCode screenshot'"
     />
     <v-card-title>{{title}}</v-card-title>
 
@@ -20,7 +21,14 @@
 
 <script>
 export default {
-  props: ['img', 'title', 'date', 'description', 'to'],
+  props: [
+    'title',
+    'description',
+    'img',
+    'alt',
+    'date',
+    'to'
+  ],
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }

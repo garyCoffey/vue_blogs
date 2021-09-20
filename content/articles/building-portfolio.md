@@ -1,5 +1,5 @@
 ---
-img: jekyll.png
+img: /thumbnails/jekyll.png
 alt: picture of science beaker
 title: Building portfolio
 description: We will be walking through how to develop your own portfolio website using the Jekyll framework.
