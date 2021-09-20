@@ -1,5 +1,5 @@
 ---
-title: My First Programming Experience
+title: First Programming Experience
 description: How I stumbled into my first programming experience.
 categories: [blogs]
 ---
