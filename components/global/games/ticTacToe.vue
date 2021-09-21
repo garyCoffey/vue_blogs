@@ -1,13 +1,8 @@
-<template>
+<template
+  slot
+  name="tic-tac-toe"
+>
   <div id="tic-tac-toe">
-    <NuxtLink to="/games">
-      <v-btn
-        color="orange lighten-2"
-        text
-      >
-        Back to All Games
-      </v-btn>
-    </NuxtLink>
     <v-alert
       v-model="alert"
       dismissible
@@ -23,109 +18,91 @@
       <br />
       <v-container fluid>
         <v-row>
-          <v-column>
-            <v-btn
-              id="game-button-1"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button1')"
-              v-bind:style="{backgroundImage: backgrounds['button1']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-2"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button2')"
-              v-bind:style="{backgroundImage: backgrounds['button2']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-3"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button3')"
-              v-bind:style="{backgroundImage: backgrounds['button3']}"
-            >
-            </v-btn>
-          </v-column>
+          <v-btn
+            id="game-button-1"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button1')"
+            v-bind:style="{backgroundImage: backgrounds['button1']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-2"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button2')"
+            v-bind:style="{backgroundImage: backgrounds['button2']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-3"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button3')"
+            v-bind:style="{backgroundImage: backgrounds['button3']}"
+          >
+          </v-btn>
         </v-row>
         <v-row>
-          <v-column>
-            <v-btn
-              id="game-button-4"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button4')"
-              v-bind:style="{backgroundImage: backgrounds['button4']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-5"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button5')"
-              v-bind:style="{backgroundImage: backgrounds['button5']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-6"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button6')"
-              v-bind:style="{backgroundImage: backgrounds['button6']}"
-            >
-            </v-btn>
-          </v-column>
+          <v-btn
+            id="game-button-4"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button4')"
+            v-bind:style="{backgroundImage: backgrounds['button4']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-5"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button5')"
+            v-bind:style="{backgroundImage: backgrounds['button5']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-6"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button6')"
+            v-bind:style="{backgroundImage: backgrounds['button6']}"
+          >
+          </v-btn>
         </v-row>
         <v-row>
-          <v-column>
-            <v-btn
-              id="game-button-7"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button7')"
-              v-bind:style="{backgroundImage: backgrounds['button7']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-8"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button8')"
-              v-bind:style="{backgroundImage: backgrounds['button8']}"
-            >
-            </v-btn>
-          </v-column>
-          <v-column>
-            <v-btn
-              id="game-button-9"
-              class="game-button"
-              height="100px"
-              width="100px"
-              @click="move('button9')"
-              v-bind:style="{backgroundImage: backgrounds['button9']}"
-            >
-            </v-btn>
-          </v-column>
+          <v-btn
+            id="game-button-7"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button7')"
+            v-bind:style="{backgroundImage: backgrounds['button7']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-8"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button8')"
+            v-bind:style="{backgroundImage: backgrounds['button8']}"
+          >
+          </v-btn>
+          <v-btn
+            id="game-button-9"
+            class="game-button"
+            height="100px"
+            width="100px"
+            @click="move('button9')"
+            v-bind:style="{backgroundImage: backgrounds['button9']}"
+          >
+          </v-btn>
         </v-row>
         <v-row >
           <v-btn

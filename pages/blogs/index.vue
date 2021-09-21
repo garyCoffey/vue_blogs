@@ -6,7 +6,7 @@
         The blog posts you will find here relate to all things code. In the future I might expand into other topics but we'll see.
       </v-card-text>
     </v-card>
-    <IndexContainer :items="articles" type='blog' />
+    <IndexContainer :items="articles" />
   </v-container>
 </template>
 

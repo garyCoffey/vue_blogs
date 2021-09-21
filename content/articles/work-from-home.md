@@ -3,6 +3,7 @@ img: /thumbnails/charlie_mailroom.jpg
 alt: Charlie day mailroom overwhelmed
 title: Working from Home
 description: My experience with working from home and why I believe it will soon be the new norm in tech.
+type: blog
 categories: [blogs]
 ---
 ![Napoleon Dynamite guy typing on computer](https://media.giphy.com/media/llKJGxQ1ESmac/giphy.gif)
