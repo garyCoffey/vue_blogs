@@ -23,6 +23,7 @@
             'categories',
             'github_name',
             'createdAt',
+            'type',
             'updatedAt',
             'slug'
           ])
