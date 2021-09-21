@@ -5,7 +5,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  ssr: false,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -23,8 +23,36 @@ export default {
       { hid: 'description', name: 'description', content: 'Play games and learn about coding!' }
     ],
     link: [
-      { rel: 'canonical', href: "https://main.duar4efa9xb.amplifyapp.com/" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
+    script: [
+       // <!-- Global site tag (gtag.js) - Google Analytics -->
+      {
+        hid: 'gtm-script1',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-481W0CBMH6',
+        defer: true
+      },
+      {
+        hid: 'gtm-script2',
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js',new Date());
+          gtag('config','G-481W0CBMH6');
+        `,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
+       // <!-- Global site tag (gtag.js) - Google Analytics -->
+
+      // When ready for monetization:
+      // https://code-tribe.com/how-to-add-google-adsense-to-nuxt/
+      // {
+      //   src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+      //   'data-ad-client': 'ca-pub-################',
+      //   async: true
+      // }
     ]
   },
   /*
@@ -71,28 +99,28 @@ export default {
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
   */
-  content: {},
+  content: {
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+  // vuetify: {
+  //   customVariables: ['~/assets/variables.scss'],
     theme: {
-      light: true,
-      themes: {
-        // dark: {
-        //   primary: colors.blue.darken2,
-        //   accent: colors.grey.darken3,
-        //   secondary: colors.amber.darken3,
-        //   info: colors.teal.lighten1,
-        //   warning: colors.amber.base,
-        //   error: colors.deepOrange.accent4,
-        //   success: colors.green.accent3
-        // }
-      }
-    }
-  },
+      // themes: {
+        light: {
+          primary: colors.purple,
+          secondary: colors.grey.darken1,
+          accent: colors.shades.black,
+          error: colors.red.accent3,
+        },
+        dark: {
+          primary: colors.blue.lighten3,
+        },
+      // }
+    },
+  // },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

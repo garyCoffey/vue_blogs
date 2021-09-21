@@ -21,6 +21,7 @@
             'img',
             'alt',
             'categories',
+            'tags',
             'github_name',
             'createdAt',
             'type',

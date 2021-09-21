@@ -12,13 +12,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/content": "^1.5.0",
+    "@nuxt/content": "^v1.14.0",
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.5.0",
-    "monster-slayer": "^1.0.1",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.0",
