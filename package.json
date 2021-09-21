@@ -18,7 +18,8 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.5.0",
     "monster-slayer": "^1.0.1",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "vue-gtag": "^1.16.1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.0",
@@ -26,7 +27,6 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/vuetify": "^1.11.2",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
