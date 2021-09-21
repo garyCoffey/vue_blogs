@@ -2,57 +2,85 @@
   slot
   name="monster-slayer"
 >
-  <v-container>
-    <div id="monster-slayer">
-      <v-alert
-        dismissible
-        :type="won ? 'success' : 'warning'"
-        :value="won || monsterWon"
-      >{{won ? 'You Have Won the Game!!!' : 'The monster has won!!!'}}
-      </v-alert>
-      <v-container
-        elevation="2"
+  <v-container id="monster-slayer">
+    <v-alert
+      dismissible
+      :type="won ? 'success' : 'warning'"
+      :value="won || monsterWon"
+    >{{won ? 'You Have Won the Game!!!' : 'The monster has won!!!'}}
+    </v-alert>
+    <v-container
+      elevation="2"
+    >
+      <v-row>
+        <div class="small-6 columns">
+          <h2 class="text-center">You</h2>
+          <div class="healthbar">
+            <div class="healthbar health text-center" :style="{width: `${playerHealth}px` }">
+              {{playerHealth}}
+            </div>
+          </div>
+        </div>
+      </v-row>
+      <v-row>
+        <div class="small-6 columns">
+          <h2 class="text-center">Monster</h2>
+          <div class="healthbar">
+            <div class="healthbar health text-center" :style="{width: `${monsterHealth}px` }">
+              {{ monsterHealth }}
+            </div>
+          </div>
+        </div>
+      </v-row>
+      <v-row class="controls">
+        <div class="small-12 columns" v-if="turn || checkGameOver" @click='turn = !turn; coolOff -= 1'>
+          <v-btn
+            id="attack"
+            name="attack"
+            @click="attack"
+          >ATTACK
+          </v-btn>
+          <v-btn
+            id="special-attack"
+            name="special-attack"
+            @click="specialAttack()"
+            v-if="checkCoolOff"
+          >SPECIAL ATTACK
+          </v-btn>
+          <v-btn
+            id="heal"
+            name="heal"
+            @click="heal()"
+          >HEAL
+          </v-btn>
+          <v-btn
+            id="give-up"
+            name="give-up"
+            @click="giveUp()"
+          >GIVE UP
+          </v-btn>
+        </div>
+      </v-row>
+      <v-row class="controls">
+        <div class="small-12 columns">
+          <v-btn
+            id="start-game"
+            name="start-game"
+            @click="resetGame"
+          >START NEW GAME
+          </v-btn>
+        </div>
+      </v-row>
+      <v-row
+        class="log"
+        v-for="log in logs"
+        v-bind:key="log.id"
       >
-        <section class="row">
-          <div class="small-6 columns">
-            <h2 class="text-center">You</h2>
-            <div class="healthbar">
-              <div class="healthbar health text-center" :style="{width: `${playerHealth}px` }">
-                {{playerHealth}}
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="row">
-          <div class="small-6 columns">
-            <h2 class="text-center">Monster</h2>
-            <div class="healthbar">
-              <div class="healthbar health text-center" :style="{width: `${monsterHealth}px` }">
-                {{ monsterHealth }}
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="row controls">
-          <div class="small-12 columns" v-if="turn || checkGameOver" @click='turn = !turn; coolOff -= 1'>
-            <v-btn id="attack" @click="attack">ATTACK</v-btn>
-            <v-btn id="special-attack" @click="specialAttack()" v-if="checkCoolOff">SPECIAL ATTACK</v-btn>
-            <v-btn id="heal" @click="heal()">HEAL</v-btn>
-            <v-btn id="give-up" @click="giveUp()">GIVE UP</v-btn>
-          </div>
-        </section>
-        <section class="row controls">
-          <div class="small-12 columns">
-            <v-btn id="start-game" @click="resetGame">START NEW GAME</v-btn>
-          </div>
-        </section>
-        <section class="row log" v-for="log in logs">
-          <div class="small-12 columns" :style="{backgroundColor: checkColor(log) ? 'red' : 'blue'}">
-            {{log}}
-          </div>
-        </section>
-      </v-container>
-    </div>
+        <div class="small-12 columns" :style="{backgroundColor: checkColor(log) ? 'red' : 'blue'}">
+          {{log}}
+        </div>
+      </v-row>
+    </v-container>
   </v-container>
 </template>
 
@@ -84,7 +112,6 @@
     },
     methods: {
       attack: function() {
-        console.log(Math.floor(Math.random()));
         let randomNumber = Math.floor(Math.random() * (constants.MAX_ATTACK - constants.MIN_ATTACK + 1) + constants.MIN_ATTACK)
         this.monsterHealth -= randomNumber;
         this.createLog('PLAYER', 'HITS', randomNumber);
