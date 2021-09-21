@@ -13,3 +13,18 @@
     </v-card>
   </div>
 </template>
+<script>
+  export default {
+    head: {
+    title: 'Home page',
+    meta:
+      [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Explains what the site has to offer'
+        }
+      ],
+    },
+  }
+</script>

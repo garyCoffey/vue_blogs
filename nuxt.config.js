@@ -16,14 +16,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title:'Play&Code',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Play games and learn about coding!' }
     ],
     link: [
+      { rel: 'canonical', href: "https://main.duar4efa9xb.amplifyapp.com/" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -52,7 +52,7 @@ export default {
     '@nuxtjs/vuetify'
   ],
   googleAnalytics: {
-    id: 'G-481W0CBMH6'
+    id: 'UA-G-481W0CBMH6'
   },
   /*
   ** Nuxt.js modules
@@ -62,7 +62,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots',
   ],
   /*
   ** Axios module configuration

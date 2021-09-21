@@ -12,6 +12,17 @@
 
 <script>
   export default {
+    head: {
+    title: 'Games page',
+    meta:
+      [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Showcasing all of the games available!'
+        }
+      ],
+    },
     async asyncData({ $content, params }) {
       const games = await $content('games', params.slug)
         .only(
