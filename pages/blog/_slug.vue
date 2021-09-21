@@ -1,42 +1,29 @@
 <template>
-  <article>
-    <div>
-      <img
+  <v-container>
+    <v-card
+      flat
+    >
+      <VImg
         :src="article.img"
         :alt="article.alt"
-      />
-      <div>
-
-      </div>
-      <div>
-        <NuxtLink
-          to="/blogs"
-        >
-          All articles
-        </NuxtLink>
-      </div>
-    </div>
-    <div>
-      <h1>{{ article.title }}</h1>
-      <p>{{ article.description }}</p>
-      <p>{{ formatDate(article.updatedAt) }}</p>
-      <p v-if=false>Post last updated: {{ formatDate(article.updatedAt) }}</p>
-      <nav>
-        <ul>
-          <li
-            v-for="link of article.toc"
-            :key="link.id"
-          >
-            <nuxtLink
-              :to="`#${link.id}`"
-              >{{ link.text }}</nuxtLink
-            >
-          </li>
-        </ul>
-      </nav>
+      >
+      </VImg>
+      <v-btn
+        nuxt
+        link
+        to="/blogs"
+      >
+        All articles
+      </v-btn>
+      <v-card-title>{{ article.title }}</v-card-title>
+      <v-card-subtitle>{{ formatDate(article.updatedAt) }}</v-card-subtitle>
+      <v-card-subtitle v-if=false>Post last updated: {{ formatDate(article.updatedAt) }}</v-card-subtitle>
+      <v-card-text>{{ article.description }}</v-card-text>
+      <TableOfContent :toc="article.toc" />
       <nuxt-content :document="article" />
-    </div>
-  </article>
+      <PrevNext :prev="prev" :next="next"/>
+    </v-card>
+  </v-container>
 </template>
 <script>
 export default {
@@ -51,6 +38,20 @@ export default {
       article,
       prev,
       next
+    }
+  },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.article.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.article.title },
+        { hid: 'og:description', property: 'og:description', content: this.article.description },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: this.article.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.article.description }
+      ]
     }
   },
   methods: {

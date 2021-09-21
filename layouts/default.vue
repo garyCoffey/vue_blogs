@@ -31,17 +31,6 @@
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
-    <v-head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-481W0CBMH6"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-481W0CBMH6');
-      </script>
-    </v-head>
     <v-main>
       <v-container>
         <nuxt />
