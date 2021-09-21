@@ -31,6 +31,17 @@
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
+    <v-head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-481W0CBMH6"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-481W0CBMH6');
+      </script>
+    </v-head>
     <v-main>
       <v-container>
         <nuxt />
@@ -46,35 +57,35 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Blogs',
-          to: '/blogs'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Games',
-          to: '/games'
-        }
-      ],
-      miniVariant: false,
-      title: 'Play & Code',
-      descriptions: 'This is a description'
+  export default {
+    data () {
+      return {
+        clipped: false,
+        drawer: false,
+        fixed: false,
+        items: [
+          {
+            icon: 'mdi-apps',
+            title: 'Welcome',
+            to: '/'
+          },
+          {
+            icon: 'mdi-chart-bubble',
+            title: 'Blogs',
+            to: '/blogs'
+          },
+          {
+            icon: 'mdi-chart-bubble',
+            title: 'Games',
+            to: '/games'
+          }
+        ],
+        miniVariant: false,
+        title: 'Play & Code',
+        descriptions: 'This is a description'
+      }
     }
   }
-}
 </script>
 <style scoped>
   #app {

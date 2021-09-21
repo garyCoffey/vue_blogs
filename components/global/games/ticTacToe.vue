@@ -183,9 +183,7 @@
         this.moves++;
         this.buttonValues[button] = this.currentPlayer;
         this.backgrounds[button] = this.getButtonBackground()
-        console.log("game mode", this.gameMode)
         if (this.checkForWinner() || this.draw()) return this.handleEndGame()
-        console.log("after")
         this.currentPlayer = this.currentPlayer === playerX ? playerO : playerX
         if (this.gameMode === defaultGameMode && this.currentPlayer !== playerX) return this.move(this.computerMove())
       },
@@ -280,7 +278,6 @@
         this.alertMessage = '';
       },
       draw: function() {
-        console.log("moves", this.moves, "noWInner", !this.checkForWinner());
         return  this.moves === 9 && !this.checkForWinner()
       },
       gameInPlay: function() {
