@@ -1,5 +1,5 @@
 <template>
-  <v-app light>
+  <v-app id="app" light>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -70,8 +70,14 @@ export default {
         }
       ],
       miniVariant: false,
-      title: 'Play & Code'
+      title: 'Play & Code',
+      descriptions: 'This is a description'
     }
   }
 }
 </script>
+<style scoped>
+  #app {
+    font-size: 16px;
+  }
+</style>
