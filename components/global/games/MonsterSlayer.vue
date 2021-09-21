@@ -1,62 +1,59 @@
-<template>
-  <div id="monster-slayer">
-    <NuxtLink to="/games">
-      <v-btn
-        color="orange lighten-2"
-        text
+<template
+  slot
+  name="monster-slayer"
+>
+  <v-container>
+    <div id="monster-slayer">
+      <v-alert
+        dismissible
+        :type="won ? 'success' : 'warning'"
+        :value="won || monsterWon"
+      >{{won ? 'You Have Won the Game!!!' : 'The monster has won!!!'}}
+      </v-alert>
+      <v-container
+        elevation="2"
       >
-        Back to All Games
-      </v-btn>
-    </NuxtLink>
-    <v-alert
-      dismissible
-      :type="won ? 'success' : 'warning'"
-      :value="won || monsterWon"
-    >{{won ? 'You Have Won the Game!!!' : 'The monster has won!!!'}}
-    </v-alert>
-    <v-container
-      elevation="2"
-    >
-      <section class="row">
-        <div class="small-6 columns">
-          <h2 class="text-center">You</h2>
-          <div class="healthbar">
-            <div class="healthbar health text-center" :style="{width: `${playerHealth}px` }">
-              {{playerHealth}}
+        <section class="row">
+          <div class="small-6 columns">
+            <h2 class="text-center">You</h2>
+            <div class="healthbar">
+              <div class="healthbar health text-center" :style="{width: `${playerHealth}px` }">
+                {{playerHealth}}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="row">
-        <div class="small-6 columns">
-          <h2 class="text-center">Monster</h2>
-          <div class="healthbar">
-            <div class="healthbar health text-center" :style="{width: `${monsterHealth}px` }">
-              {{ monsterHealth }}
+        </section>
+        <section class="row">
+          <div class="small-6 columns">
+            <h2 class="text-center">Monster</h2>
+            <div class="healthbar">
+              <div class="healthbar health text-center" :style="{width: `${monsterHealth}px` }">
+                {{ monsterHealth }}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="row controls">
-        <div class="small-12 columns" v-if="turn || checkGameOver" @click='turn = !turn; coolOff -= 1'>
-          <v-btn id="attack" @click="attack">ATTACK</v-btn>
-          <v-btn id="special-attack" @click="specialAttack()" v-if="checkCoolOff">SPECIAL ATTACK</v-btn>
-          <v-btn id="heal" @click="heal()">HEAL</v-btn>
-          <v-btn id="give-up" @click="giveUp()">GIVE UP</v-btn>
-        </div>
-      </section>
-      <section class="row controls">
-        <div class="small-12 columns">
-          <v-btn id="start-game" @click="resetGame">START NEW GAME</v-btn>
-        </div>
-      </section>
-      <section class="row log" v-for="log in logs">
-        <div class="small-12 columns" :style="{backgroundColor: checkColor(log) ? 'red' : 'blue'}">
-          {{log}}
-        </div>
-      </section>
-    </v-container>
-  </div>
+        </section>
+        <section class="row controls">
+          <div class="small-12 columns" v-if="turn || checkGameOver" @click='turn = !turn; coolOff -= 1'>
+            <v-btn id="attack" @click="attack">ATTACK</v-btn>
+            <v-btn id="special-attack" @click="specialAttack()" v-if="checkCoolOff">SPECIAL ATTACK</v-btn>
+            <v-btn id="heal" @click="heal()">HEAL</v-btn>
+            <v-btn id="give-up" @click="giveUp()">GIVE UP</v-btn>
+          </div>
+        </section>
+        <section class="row controls">
+          <div class="small-12 columns">
+            <v-btn id="start-game" @click="resetGame">START NEW GAME</v-btn>
+          </div>
+        </section>
+        <section class="row log" v-for="log in logs">
+          <div class="small-12 columns" :style="{backgroundColor: checkColor(log) ? 'red' : 'blue'}">
+            {{log}}
+          </div>
+        </section>
+      </v-container>
+    </div>
+  </v-container>
 </template>
 
 <script>
@@ -265,4 +262,3 @@
     background-color: #c7c7c7;
   }
 </style>
-

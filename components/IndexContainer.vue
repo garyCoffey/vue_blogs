@@ -13,7 +13,7 @@
           v-bind:img="item.img"
           v-bind:alt="item.alt"
           v-bind:date="item.updatedAt > item.createdAt ? item.updatedAt : item.createdAt"
-          v-bind:to="type === 'blog' ? { name: 'blog-slug', params: { slug: item.slug } } : item.to"
+          v-bind:to="{ name: `${item.type}-slug`, params: { slug: item.slug } }"
         />
       </v-col>
     </v-row>
@@ -21,9 +21,6 @@
 </template>
 <script>
   export default {
-    props: [
-      'items',
-      'type'
-    ]
+    props: ['items']
   }
 </script>
