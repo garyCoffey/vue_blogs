@@ -1,10 +1,12 @@
 <template>
   <v-container fluid>
     <v-card
+      color="accent"
       flex
       d-flex
       flex-column
       hover
+      rounded
       nuxt
       link
       :to="to"
@@ -51,6 +53,6 @@
 <style scoped>
   .text--primary {
     overflow-y: auto;
-    height:100px
+    height:100px;
   }
 </style>

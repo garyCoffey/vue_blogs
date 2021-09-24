@@ -1,4 +1,7 @@
-<template>
+<template
+  slot
+  name="v-image"
+>
   <v-img
     :src="src"
     :alt="alt"

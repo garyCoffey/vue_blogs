@@ -1,38 +1,10 @@
 <template>
   <v-container>
-    <div>
-      <img
-        :src="game.img"
-        :alt="game.alt"
-      />
-      <div>
-        <NuxtLink
-          to="/games"
-        >
-          All Games
-        </NuxtLink>
-      </div>
-    </div>
-    <div>
-      <h2>{{ game.title }}</h2>
-      <p>{{ game.description }}</p>
-      <p>{{ formatDate(game.updatedAt) }}</p>
-      <p v-if=false>Post last updated: {{ formatDate(game.updatedAt) }}</p>
-      <!-- <nav>
-        <ul>
-          <li
-            v-for="link of game.toc"
-            :key="link.id"
-          >
-            <nuxtLink
-              :to="`#${link.id}`"
-              >{{ link.text }}</nuxtLink
-            >
-          </li>
-        </ul>
-      </nav> -->
-      <nuxt-content :document="game" />
-    </div>
+    <ShowContainer
+      indexBtnText="All Games"
+      indexBtnPath="/games"
+      :content="game"
+    />
   </v-container>
 </template>
 <script>
