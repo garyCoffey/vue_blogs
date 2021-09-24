@@ -9,10 +9,10 @@
         :alt="content.alt"
       >
       </VImg>
-      <VBtn
+      <v-btn
         :to="indexBtnPath"
       >{{indexBtnText}}
-      </VBtn>
+      </v-btn>
       <v-card-title>{{ content.title }}</v-card-title>
       <v-card-subtitle>{{ formatDate(content.updatedAt) }}</v-card-subtitle>
       <v-card-subtitle v-if=false>Post last updated: {{ formatDate(content.updatedAt) }}</v-card-subtitle>
