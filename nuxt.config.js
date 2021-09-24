@@ -1,4 +1,6 @@
-import colors from 'vuetify/es5/util/colors'
+// import theme from '@nuxt/content-theme-docs'
+
+// import theme from '@nuxt/content-theme-docs'
 
 export default {
   /*
@@ -105,22 +107,12 @@ export default {
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
-  // vuetify: {
-  //   customVariables: ['~/assets/variables.scss'],
-    theme: {
-      // themes: {
-        light: {
-          primary: colors.purple,
-          secondary: colors.grey.darken1,
-          accent: colors.shades.black,
-          error: colors.red.accent3,
-        },
-        dark: {
-          primary: colors.blue.lighten3,
-        },
-      // }
-    },
-  // },
+
+  vuetify: {
+    treeShake: true,
+    customVariables: ["~/assets/variables.scss"],
+    optionsPath: './vuetify.options.js'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

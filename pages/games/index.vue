@@ -1,12 +1,10 @@
 <template>
   <v-container fluid>
-    <h2>Games</h2>
-    <v-card>
-      <v-card-text>
-        The blog posts you will find here relate to all things code. In the future I might expand into other topics but we'll see.
-      </v-card-text>
-    </v-card>
-    <IndexContainer :items="games" />
+    <v-sheet>
+      <h2>Games</h2>
+      <p>The blog posts you will find here relate to all things code. In the future I might expand into other topics but we'll see.</p>
+      <IndexContainer :items="games" />
+    </v-sheet>
   </v-container>
 </template>
 

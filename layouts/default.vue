@@ -1,57 +1,108 @@
 <template>
-  <v-app id="app" light>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
+  <v-app
+    id="app"
+  >
+  <v-card class="overflow-hidden">
+      <v-app-bar
+        color="primary"
+        shrink-on-scroll
+        scroll-target="#scrolling-techniques-3"
+      >
+        <!-- <template v-slot:img="{ props }">
+          <v-img
+            v-bind="props"
+            gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+          ></v-img>
+        </template> -->
+
+        <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
+
+        <v-app-bar-title center>{{title}}</v-app-bar-title>
+
+        <v-spacer></v-spacer>
+
+        <!-- <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn> -->
+
+        <template
+          v-slot:extension
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-main>
+          <v-tabs
+            background-color="primary"
+            align-with-title
+            exact-path
+          >
+            <v-tabs-slider color="secondary"></v-tabs-slider>
+            <v-tab
+              nuxt
+              link
+              to="/"
+            >Home
+            </v-tab>
+            <v-tab
+              nuxt
+              link
+              to="/games"
+            >Games
+            </v-tab>
+            <v-tab
+              nuxt
+              link
+              to="/blogs"
+            >Blogs
+            </v-tab>
+          </v-tabs>
+        </template>
+      </v-app-bar>
+      <v-sheet
+        id="scrolling-techniques-3"
+        class="overflow-y-auto"
+        max-height="600"
+      >
+        <v-container fluid>
+          <v-sheet>
+          <v-main>
+            <nuxt />
+          </v-main>
+          </v-sheet>
+        </v-container>
+      </v-sheet>
+    </v-card>
     <v-footer
-      :absolute="!fixed"
       app
+      color="primary"
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <!-- <v-tabs
+        color="primary"
+        exact-path
+      > -->
+        <v-tab
+            nuxt
+            link
+            to="/privacyPolicy"
+          >Privacy Policy
+          </v-tab>
+        <div style="float:right; !important">&copy; {{ new Date().getFullYear() }}</div>
+      <!-- </v-tabs> -->
     </v-footer>
   </v-app>
 </template>
 
 <script>
-  export default {
+import { defineComponent } from "@vue/composition-api"
+
+  export default defineComponent({
     data () {
       return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
         items: [
           {
             icon: 'mdi-apps',
@@ -69,15 +120,19 @@
             to: '/games'
           }
         ],
-        miniVariant: false,
-        title: 'Play & Code',
-        descriptions: 'This is a description'
+        title: 'Play & Code'
+      }
+    },
+    computed:{
+      theme(){
+        return (this.$vuetify.theme.dark) ? 'dark' : 'light'
       }
     }
-  }
+  })
 </script>
-<style scoped>
-  #app {
-    font-size: 16px;
-  }
+
+<style>
+  /* .tabs {
+    background-color: "white";
+  } */
 </style>
