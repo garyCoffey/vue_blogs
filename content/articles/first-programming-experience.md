@@ -14,10 +14,16 @@ This was a terrible task to do manually as it was difficult to retrieve all of t
 
 Looking at this file full of what seemed at first to be complete gibberish, I thought... This will be impossible.
 
-![Always Sunny Charlie Day looking confused](https://media.giphy.com/media/kyhw6BlG5ip2YEHliO/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/kyhw6BlG5ip2YEHliO/giphy.gif" alt="Charlie Day">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 But I was in the Air Force and this mission needed to be accomplished (the new people on the team didn't even know the old way of doing this task). So I got to work and started reading. Surprisingly I picked up on a key detail. Within the first line of code, I seen a familiar file name. See, one of the steps of getting the software to work was first to export some data and save it to your desktop with a specific file name/extension. I seen this same filename here in the code. Then I realized that the new application had changed the default file extension for these files to something else. Out of sheer curiosity, I changed the script to look for the file with the new extension. And, to my surprise, this fixed the issue.
 
-![Star Wars A New Hope](https://media.giphy.com/media/3o84sqj1jnLWlbZhn2/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/3o84sqj1jnLWlbZhn2/giphy.gif" alt="Star Wars A New Hope">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 This is when I started thinking, hey this is something I can do. Granted, this fix was mostly luck and was a super easy change. But this is the day that really set me on the path to become a software engineer. I felt pretty awesome that I was able to solve a serious real world problem and save the rest of my team from having to hit the books and remember how to do some crazy math analyses.

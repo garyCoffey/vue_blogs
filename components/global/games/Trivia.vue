@@ -11,8 +11,7 @@
 </template>
 
 <script>
-  import { defineComponent } from '@vue/composition-api'
-  export default defineComponent({
+  export default {
     data() {
       return {
         questions: []
@@ -24,7 +23,7 @@
       ).then(res => res.json())
     }
 
-  })
+  }
 </script>
 
 <style>

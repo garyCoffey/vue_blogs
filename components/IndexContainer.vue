@@ -10,8 +10,8 @@
         <ContentCard
           v-bind:title="item.title"
           v-bind:description="item.description"
-          v-bind:img="item.img"
-          v-bind:alt="item.alt"
+          v-bind:img="item.img ? item.img : '/defaultPic.png'"
+          v-bind:alt="item.alt ? item.alt : 'VSCode screenshot'"
           v-bind:date="item.updatedAt > item.createdAt ? item.updatedAt : item.createdAt"
           v-bind:to="{ name: `${item.type}-slug`, params: { slug: item.slug } }"
         />
@@ -21,6 +21,11 @@
 </template>
 <script>
   export default {
-    props: ['items']
+    props: {
+      items: {
+        type: Array,
+        required: true
+      }
+    }
   }
 </script>

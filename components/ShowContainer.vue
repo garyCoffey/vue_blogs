@@ -1,35 +1,40 @@
 <template>
-  <v-sheet
-  >
+  <v-container fluid>
     <v-card
+      id="card"
       flat
+      elevation="0"
     >
-      <VImg
-        :src="content.img"
-        :alt="content.alt"
+      <VImgUi
+        :src="content.img ? content.img : '/defaultPic.png'"
+        :alt="content.alt ? content.alt : 'VSCode screenshot'"
       >
-      </VImg>
-      <v-btn
+      </VImgUi>
+      <!-- <TableOfContents :toc="content.toc" /> -->
+      <VBtnUi
+        id="all-items"
+        name="all-items"
+        :buttonTitle="indexBtnText"
+        nuxt
+        link
         :to="indexBtnPath"
-      >{{indexBtnText}}
-      </v-btn>
+      />
       <v-card-title>{{ content.title }}</v-card-title>
       <v-card-subtitle>{{ formatDate(content.updatedAt) }}</v-card-subtitle>
       <v-card-subtitle v-if=false>Post last updated: {{ formatDate(content.updatedAt) }}</v-card-subtitle>
       <v-card-text
-        color="secondary"
       >{{ content.description }}</v-card-text>
-      <TableOfContent :toc="content.toc" />
+    </v-card>
+    <v-container fluid>
       <nuxt-content :document="content" />
       <PrevNext :prev="prev" :next="next"/>
-    </v-card>
-  </v-sheet>
+    </v-container>
+  </v-container>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
 
-export default defineComponent({
+export default {
   props: {
     indexBtnText: {
       type: String,
@@ -58,5 +63,24 @@ export default defineComponent({
       return new Date(date).toLocaleDateString('en', options)
     }
   }
-})
+}
 </script>
+
+<style scoped>
+  @media only screen and (min-width: 600px) {
+    #all-items {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+    }
+    #card {
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 8em;
+      width: 700px;
+      align-content: center;
+    }
+  }
+</style>

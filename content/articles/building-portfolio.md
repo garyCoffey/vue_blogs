@@ -78,7 +78,10 @@ At this point, you should have the boilerplate site up and running. You should b
 
 All Done!
 
-![SpongeBob rubbing his hands like job complete.](https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" alt="SpongeBob">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Just Kidding....
 
@@ -109,7 +112,10 @@ You might be wondering to yourself, what is a [layout](https://jekyllrb.com/docs
 
 That's the purpose for a [layout](https://jekyllrb.com/docs/layouts/). Instead of doing the work manually on every post page, define a post [layout](https://jekyllrb.com/docs/layouts/) and place this code there. Now every new post that you list as [layout](https://jekyllrb.com/docs/layouts/) type post will display the title as it is coded in the post [layout](https://jekyllrb.com/docs/layouts/). Pretty cool right?
 
-![Cartman from South Park saying "That's pretty cool"](https://media.giphy.com/media/26tP7cDNJUZQy7w3u/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/26tP7cDNJUZQy7w3u/giphy.gif" alt="Cartman">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Ok now for our part, we are going to be using a very basic them called hacker. It is basic in the sense that it does not have any predefined layouts. We will have to build those.
 
@@ -118,17 +124,26 @@ Ok now for our part, we are going to be using a very basic them called hacker. I
 
 Okay now that all of that is out of the way lets get our theme updated. Let's open back up our *Gemfile*.
 
-![Pic of Gemfile](/content-images/gemfile.png)
+<v-img-ui src="/content-images/gemfile.png" alt="Gemfile">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Okay this will be pretty easy. All we have to do is copy the gem name/version from the [gem page](https://rubygems.org/gems/jekyll-theme-hacker).
 
-![Pic hacker theme gem copy button](/content-images/hacker_theme_copy.png)
+<v-img-ui src="/content-images/hacker_theme_copy.png" alt="hacker theme">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Now let's replace minima in our *Gemfile* with that copy.
 
 And then lets open up the *_config.yml* file in our directory. There should also be a section in here that defines the theme. Let's update that as well.
 
-![Pic of config theme](/content-images/config_theme.png)
+<v-img-ui src="/content-images/config_theme.png" alt="config theme">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 It would be great to see what everything looks like, but you might find things to be temporarily broken. The issue goes back to layouts. The Minima theme defined a layout for *home*, *page*, and *post*. That matters because those layouts are referred to in a few places. You can see it at the top of the *index.markdown* file for example. Our new theme does not have those layouts..... So we will have to build some ourselves.
 
@@ -212,7 +227,10 @@ Last thing before firing up our app. Lets do a little cleanup and delete the `in
 
 Ok Finally!
 
-![Beetle Juice saying "Its Showtime!"](https://media.giphy.com/media/13HdQUsXSa6QYU/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/13HdQUsXSa6QYU/giphy.gif" alt="Beetle Juice ">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Run the following command:
 
@@ -222,7 +240,10 @@ bundle exec jekyll serve
 
 And lets see how it looks!
 
-![Pic of current home page](/content-images/initial_home.png)
+<v-img-ui src="/content-images/initial_home.png" alt="current home page">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Nothing too special yet, but it is a start. Also notice how the title we defined in the `home.md` Front Matter is being displayed as an h2 due to how we setup the *layout*. Pretty cool so far!
 
@@ -423,7 +444,10 @@ Okay now if we go back to the new project file we added before we should see tha
 
 One last cleanup item, right now we have an *About* page that is hanging out in the root directory. For consistency, let's drag and drop that into the *pages* folder.
 
-![Danny Devito from Always Sunny saying 'I think our work is done!'](https://media.giphy.com/media/bg1MQ6IUVoVOM/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/bg1MQ6IUVoVOM/giphy.gif" alt="Danny Devito">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 There is a lot of things you can do to improve your new portfolio site. You can change any of the styling you are not happy with. You can add new categories of *_posts*. I would encourage you to take what we just completed and really make it your own. Add/change things to something you like. But also, focus on adding content. Spend some time creating some cool projects to add to your site. Eventually, you will want to have about 3-6 really good projects on display here.
 

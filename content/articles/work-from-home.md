@@ -6,7 +6,11 @@ description: My experience with working from home and why I believe it will soon
 type: blog
 categories: [blogs]
 ---
-![Napoleon Dynamite guy typing on computer](https://media.giphy.com/media/llKJGxQ1ESmac/giphy.gif)
+
+<v-img-ui src="https://media.giphy.com/media/llKJGxQ1ESmac/giphy.gif" alt="Napoleon Dynamite">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 ### The working from home tech movement is upon us
 
@@ -28,7 +32,10 @@ That's a lot of money. Combine that with the recruitment boost that the offer of
 
 But won't employees working from home just skip the work part and watch Netflix all day????
 
-![Dog watching TV](https://media.giphy.com/media/3o85xCVh0TmBrQr36U/giphy.gif)
+<v-img-ui src="https://media.giphy.com/media/3o85xCVh0TmBrQr36U/giphy.gif" alt="Dog watching TV">
+  <template #v-img-ui>
+  </template>
+</v-img-ui>
 
 Not so much as it turns out. Part of the above $11,000.00 figure includes a 15% increase in productivity from employees. Personally, I feel like I can get more work done from home than in the office. I don't start the day off with a mental burn from my commute which seems to help out a lot. I also get to have a less frantic morning usually taking my time to get a good breakfast in before work starts.
 
