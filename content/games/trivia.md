@@ -7,7 +7,6 @@ type: game
 categories: [games]
 ---
 
-
 <trivia>
   <template #trivia>
   </template>

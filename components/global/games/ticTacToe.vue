@@ -290,6 +290,9 @@
 </script>
 
 <style>
+  #tic-tac-toe {
+    width: 350px;
+  }
   .row {
     width: 100%;
   }

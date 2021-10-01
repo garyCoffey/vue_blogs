@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <ShowContainer
       indexBtnText="All Articles"
       indexBtnPath="/blogs"

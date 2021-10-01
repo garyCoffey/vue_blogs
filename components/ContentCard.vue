@@ -1,7 +1,6 @@
 <template>
   <v-container fluid>
     <v-card
-      color="accent"
       flex
       d-flex
       flex-column
@@ -11,11 +10,9 @@
       link
       :to="to"
     >
-      <v-img
-        class="white--text align-end"
-        height="200px"
-        :src="img ? img : '/defaultPic.png'"
-        :alt="alt ? alt : 'VSCode screenshot'"
+      <VImgUi
+        :src="img"
+        :alt="alt"
       />
       <v-card-title
         class="text--primary flex"
@@ -34,14 +31,32 @@
 
 <script>
   export default {
-    props: [
-      'title',
-      'description',
-      'img',
-      'alt',
-      'date',
-      'to'
-    ],
+    props: {
+      title: {
+        type: String,
+        required: true
+      },
+      description: {
+        type: String,
+        required: true
+      },
+      img: {
+        type: String,
+        required: true
+      },
+      alt: {
+        type: String,
+        required: true
+      },
+      date: {
+        type: String,
+        required: true
+      },
+      to: {
+        type: Object,
+        required: true
+      }
+    },
     methods: {
       formatDate(date) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' }

@@ -13,10 +13,10 @@ categories: [blogs, code, vue]
 
 The game that once saved the world from global thermonuclear war.... At least in the movies....
 
-<v-image src="https://media.giphy.com/media/RN6sYUh5VIYlG/giphy.gif" alt="war games">
-  <template #v-image>
+<v-img-ui src="https://media.giphy.com/media/RN6sYUh5VIYlG/giphy.gif" alt="war games">
+  <template #v-img-ui>
   </template>
-</v-image>
+</v-img-ui>
 
 Tic Tac Toe has been around for hundreds of years. Most people start playing this game as a kid due to how simple the rules are to understand. I chose to code this game for basically that same reason. I thought it would be super simple to create. Though it did not take me too long to complete, there was definitely more to it than I originally gave it credit for.
 
@@ -117,10 +117,10 @@ So basically what I have at this step is a UI game board, and some data setup to
 
 ### Game Logic
 
-<v-image src="https://media.giphy.com/media/10pOjRQeiyb0ZO/giphy.gif" alt="irobot">
-  <template #v-image>
+<v-img-ui src="https://media.giphy.com/media/10pOjRQeiyb0ZO/giphy.gif" alt="irobot">
+  <template #v-img-ui>
   </template>
-</v-image>
+</v-img-ui>
 
 Okay so this is the part where the code gets a little more interesting.
 
@@ -181,10 +181,10 @@ In this function, I reset the game board to the default values (background and p
 
 ### Winners Circle
 
-<v-image src="https://media.giphy.com/media/x0kMYoT7J31i8/giphy.gif" alt="Charlie Sheen winning">
-  <template #v-image>
+<v-img-ui src="https://media.giphy.com/media/x0kMYoT7J31i8/giphy.gif" alt="Charlie Sheen winning">
+  <template #v-img-ui>
   </template>
-</v-image>
+</v-img-ui>
 
 ```js
 checkVerticalWinner: function() {

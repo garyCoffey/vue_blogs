@@ -28,13 +28,14 @@
           </v-radio>
         </v-radio-group>
       </v-container>
-      <v-btn
+      <VBtnUi
+        id="assessment-submit"
+        name="assessment-submit"
         class="mr-4"
         type="submit"
         :disabled="false"
-      >
-        Submit
-      </v-btn>
+        buttonTitle="Submit"
+      />
     </v-form>
   </v-container>
 </template>

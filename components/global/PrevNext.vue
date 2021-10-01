@@ -1,22 +1,27 @@
 <template>
-  <v-container>
+  <v-container
+    id="prev-next"
+    fluid
+  >
     <v-row>
-      <v-btn
+      <VBtnUi
         v-if="prev"
+        id="previous"
+        name="previous"
+        :buttonTitle="prev.title"
         nuxt
         link
         :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
-      >
-        {{ prev.title }}
-      </v-btn>
-      <v-btn
+      />
+      <VBtnUi
         v-if="next"
+        id="next"
+        name="next"
+        :buttonTitle="next.title"
         nuxt
         link
         :to="{ name: 'blog-slug', params: { slug: next.slug } }"
-      >
-        {{ next.title }}
-      </v-btn>
+      />
     </v-row>
   </v-container>
 </template>
@@ -35,3 +40,23 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  @media only screen and (min-width: 600px) {
+    #prev-next {
+      padding: 10px;
+
+      margin-left: auto;
+      margin-right: auto;
+      width: 8em;
+      width: 700px;
+      align-content: center;
+    }
+    #previous {
+      margin: 10px;
+    }
+    #next {
+      margin: 10px;
+    }
+  }
+</style>
