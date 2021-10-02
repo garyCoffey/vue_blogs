@@ -8,26 +8,28 @@
       <VImgUi
         :src="content.img ? content.img : '/defaultPic.png'"
         :alt="content.alt ? content.alt : 'VSCode screenshot'"
-      >
-      </VImgUi>
+      />
       <!-- <TableOfContents :toc="content.toc" /> -->
       <VBtnUi
         id="all-items"
         name="all-items"
-        :buttonTitle="indexBtnText"
+        :button-title="indexBtnText"
         nuxt
         link
         :to="indexBtnPath"
       />
       <v-card-title>{{ content.title }}</v-card-title>
       <v-card-subtitle>{{ formatDate(content.updatedAt) }}</v-card-subtitle>
-      <v-card-subtitle v-if=false>Post last updated: {{ formatDate(content.updatedAt) }}</v-card-subtitle>
-      <v-card-text
-      >{{ content.description }}</v-card-text>
+      <v-card-subtitle v-if="false">
+        Post last updated: {{ formatDate(content.updatedAt) }}
+      </v-card-subtitle>
+      <v-card-text>
+        {{ content.description }}
+      </v-card-text>
     </v-card>
     <v-container fluid>
       <nuxt-content :document="content" />
-      <PrevNext :prev="prev" :next="next"/>
+      <PrevNext :prev="prev" :next="next" />
     </v-container>
   </v-container>
 </template>
@@ -50,15 +52,21 @@ export default {
     },
     prev: {
       type: Object,
-      required: false
+      required: false,
+      default: () => {
+        return {}
+      }
     },
     next: {
       type: Object,
-      required: false
+      required: false,
+      default: () => {
+        return {}
+      }
     }
   },
   methods: {
-    formatDate(date) {
+    formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }

@@ -3,22 +3,19 @@
     v-if="toc.length > 3"
     fluid
   >
-
     <v-tabs
-      background-color="primary"
-      right
       v-for="link of toc"
       :key="link.id"
+      background-color="primary"
+      right
       :to="`#${link.id}`"
     >
-      <v-tabs-slider color="secondary"></v-tabs-slider>
+      <v-tabs-slider color="secondary" />
       <a
         role="tab"
         :href="`#${link.id}`"
       >
-        <v-tab
-
-        >{{link.text}}
+        <v-tab>{{ link.text }}
         </v-tab>
       </a>
     </v-tabs>
@@ -32,6 +29,6 @@ export default {
       type: Array,
       required: true
     }
-  },
+  }
 }
 </script>
