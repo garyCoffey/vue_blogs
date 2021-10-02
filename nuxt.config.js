@@ -18,7 +18,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title:'Play&Code',
+    title: 'Play&Code',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -29,7 +29,7 @@ export default {
     ],
     __dangerouslyDisableSanitizers: ['script'],
     script: [
-       // <!-- Global site tag (gtag.js) - Google Analytics -->
+      // <!-- Global site tag (gtag.js) - Google Analytics -->
       {
         hid: 'gtm-script1',
         src: 'https://www.googletagmanager.com/gtag/js?id=G-481W0CBMH6',
@@ -46,7 +46,7 @@ export default {
         type: 'text/javascript',
         charset: 'utf-8'
       }
-       // <!-- Global site tag (gtag.js) - Google Analytics -->
+      // <!-- Global site tag (gtag.js) - Google Analytics -->
 
       // When ready for monetization:
       // https://code-tribe.com/how-to-add-google-adsense-to-nuxt/
@@ -90,7 +90,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     // https://github.com/nuxt-community/robots-module
-    '@nuxtjs/robots',
+    '@nuxtjs/robots'
   ],
   /*
   ** Axios module configuration
@@ -110,7 +110,7 @@ export default {
 
   vuetify: {
     treeShake: true,
-    customVariables: ["~/assets/variables.scss"],
+    customVariables: ['~/assets/variables.scss'],
     optionsPath: './vuetify.options.js'
   },
   /*
@@ -118,5 +118,5 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  },
+  }
 }

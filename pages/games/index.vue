@@ -9,8 +9,29 @@
 </template>
 
 <script>
-  export default {
-    head: {
+export default {
+  async asyncData ({ $content, params }) {
+    const games = await $content('games', params.slug)
+      .only(
+        [
+          'title',
+          'description',
+          'img',
+          'alt',
+          'type',
+          'categories',
+          'github_name',
+          'createdAt',
+          'updatedAt',
+          'slug'
+        ])
+      .sortBy('updatedAt', 'desc')
+      .fetch()
+    return {
+      games
+    }
+  },
+  head: {
     title: 'Games page',
     meta:
       [
@@ -19,30 +40,9 @@
           name: 'description',
           content: 'Showcasing all of the games available!'
         }
-      ],
-    },
-    async asyncData({ $content, params }) {
-      const games = await $content('games', params.slug)
-        .only(
-          [
-            'title',
-            'description',
-            'img',
-            'alt',
-            'type',
-            'categories',
-            'github_name',
-            'createdAt',
-            'updatedAt',
-            'slug'
-          ])
-        .sortBy('updatedAt', 'desc')
-        .fetch()
-      return {
-        games
-      }
-    }
+      ]
   }
+}
 </script>
 <style>
 </style>

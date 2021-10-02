@@ -2,16 +2,16 @@
   <v-app
     id="app"
   >
-  <v-card>
+    <v-card>
       <NavBar />
       <v-sheet
         max-height="600"
       >
         <v-container fluid>
           <v-sheet>
-          <v-main>
-            <nuxt />
-          </v-main>
+            <v-main>
+              <nuxt />
+            </v-main>
           </v-sheet>
         </v-container>
       </v-sheet>
@@ -21,30 +21,30 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        items: [
-          {
-            icon: 'mdi-apps',
-            title: 'Welcome',
-            to: '/'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Blogs',
-            to: '/blogs'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Games',
-            to: '/games'
-          }
-        ],
-        title: 'Play & Code'
-      }
+export default {
+  data () {
+    return {
+      items: [
+        {
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Blogs',
+          to: '/blogs'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Games',
+          to: '/games'
+        }
+      ],
+      title: 'Play & Code'
     }
   }
+}
 </script>
 
 <style>

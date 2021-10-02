@@ -12,7 +12,8 @@
     :nuxt="nuxt"
     :link="link"
     :to="to"
-  >{{ buttonTitle }}
+  >
+    {{ buttonTitle }}
   </v-btn>
 </template>
 
@@ -33,11 +34,13 @@ export default {
     },
     className: {
       type: String,
-      required: false
+      required: false,
+      default: ''
     },
     type: {
       type: String,
-      required: false
+      required: false,
+      default: ''
     },
     disabled: {
       type: Boolean,
@@ -52,8 +55,12 @@ export default {
       required: false
     },
     to: {
+      // eslint-disable-next-line vue/require-prop-type-constructor
       type: Object | String,
-      required: false
+      required: false,
+      default () {
+        return ''
+      }
     }
   }
 }

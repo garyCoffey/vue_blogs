@@ -7,7 +7,7 @@ export default {
     light: true,
     themes: {
       light: {
-        //COMPLIMENTARY COLORS
+        // COMPLIMENTARY COLORS
         // $color1: #994562;
         // $color2: #b0476c;
         // $color3: #5687c6;
@@ -23,4 +23,4 @@ export default {
       }
     }
   }
-};
+}

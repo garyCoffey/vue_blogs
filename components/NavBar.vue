@@ -13,9 +13,11 @@
 
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
-      <v-app-bar-title center>{{title}}</v-app-bar-title>
+      <v-app-bar-title center>
+        {{ title }}
+      </v-app-bar-title>
 
-      <v-spacer></v-spacer>
+      <v-spacer />
 
       <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -37,24 +39,27 @@
           align-with-title
           exact-path
         >
-          <v-tabs-slider color="secondary"></v-tabs-slider>
+          <v-tabs-slider color="secondary" />
           <v-tab
             nuxt
             link
             to="/"
-          >Home
+          >
+            Home
           </v-tab>
           <v-tab
             nuxt
             link
             to="/games"
-          >Games
+          >
+            Games
           </v-tab>
           <v-tab
             nuxt
             link
             to="/blogs"
-          >Blogs
+          >
+            Blogs
           </v-tab>
         </v-tabs>
       </template>
@@ -63,28 +68,28 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        items: [
-          {
-            icon: 'mdi-apps',
-            title: 'Welcome',
-            to: '/'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Blogs',
-            to: '/blogs'
-          },
-          {
-            icon: 'mdi-chart-bubble',
-            title: 'Games',
-            to: '/games'
-          }
-        ],
-        title: 'Play & Code'
-      }
+export default {
+  data () {
+    return {
+      items: [
+        {
+          icon: 'mdi-apps',
+          title: 'Welcome',
+          to: '/'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Blogs',
+          to: '/blogs'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Games',
+          to: '/games'
+        }
+      ],
+      title: 'Play & Code'
     }
   }
+}
 </script>
