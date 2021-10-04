@@ -3,7 +3,6 @@ title: VUE Coding tic-tac-toe
 description: Coding out the humble tic tac toe game in VUE
 img: /thumbnails/tic-tac-toe.webp
 alt: tic-tac-toe
-github_name: vue_blogs
 type: blog
 tags: [blogs, code, vue]
 categories: [blogs, code, vue]

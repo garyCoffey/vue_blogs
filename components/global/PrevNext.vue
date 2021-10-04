@@ -8,7 +8,7 @@
         v-if="prev"
         id="previous"
         name="previous"
-        :button-title="prev.title"
+        :title="prev.title"
         nuxt
         link
         :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
@@ -17,7 +17,7 @@
         v-if="next"
         id="next"
         name="next"
-        :button-title="next.title"
+        :title="next.title"
         nuxt
         link
         :to="{ name: 'blog-slug', params: { slug: next.slug } }"
