@@ -34,7 +34,7 @@
         class="mr-4"
         type="submit"
         :disabled="false"
-        button-title="Submit"
+        title="Submit"
       />
     </v-form>
   </v-container>

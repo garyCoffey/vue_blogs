@@ -13,7 +13,7 @@
       <VBtnUi
         id="all-items"
         name="all-items"
-        :button-title="indexBtnText"
+        :title="indexBtnText"
         nuxt
         link
         :to="indexBtnPath"
@@ -29,7 +29,11 @@
     </v-card>
     <v-container fluid>
       <nuxt-content :document="content" />
-      <PrevNext :prev="prev" :next="next" />
+      <PrevNext
+        v-if="content.type === 'blog'"
+        :prev="prev"
+        :next="next"
+      />
     </v-container>
   </v-container>
 </template>

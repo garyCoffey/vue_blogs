@@ -13,7 +13,7 @@
     :link="link"
     :to="to"
   >
-    {{ buttonTitle }}
+    {{ title }}
   </v-btn>
 </template>
 
@@ -28,7 +28,7 @@ export default {
       type: String,
       required: true
     },
-    buttonTitle: {
+    title: {
       type: String,
       required: true
     },
